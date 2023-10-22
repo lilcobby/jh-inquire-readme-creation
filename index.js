@@ -65,7 +65,11 @@ const questions = [
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
-    console.log(answers);
+    const test = generateMarkdown(answers);
+
+    fs.writeFile("README.md", test, (err) =>
+      err ? console.log(err) : console.log("Successfully created readme")
+    );
   });
 }
 
