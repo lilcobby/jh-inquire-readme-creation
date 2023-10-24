@@ -66,8 +66,8 @@ const questions = [
 function init() {
   inquirer.prompt(questions).then((answers) => {
     const test = generateMarkdown(answers);
-
-    fs.writeFile("README.md", test, (err) =>
+    // creates readme inside of xtreme file
+    fs.writeFile("./Xtreme_Readme/README.md", test, (err) =>
       err ? console.log(err) : console.log("Successfully created readme")
     );
   });
