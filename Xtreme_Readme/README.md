@@ -1,23 +1,29 @@
 # Title: a
 
-## Table of Contents:
-        [Description](#description)
-        [Install](#install)
-        [Usage](#usage)
-        [Test Instructions](#test instructions)
+## Badge:
 
+![License: mit](https://img.shields.io/badge/mit-yellow.svg)
+
+## Heres the license link: (https://choosealicense.com/licenses/mit)
+
+## Table of Contents:
+
+- [Description](#description:)
+- [Installation](#installation:)
+- [Usage](#usage:)
+- [Test Instructions](#test-Instructions:)
 
 ## Description: b
 
 ## Installation: c
 
-## How to use the App: d
+## Usage: d
 
 ## Contributions: e
 
-## Test Instructions: f
+## Test-Instructions: f
 
-## Licensing: MIT
+## Licensing: mit
 
 ## Github: https://github.com/g
 

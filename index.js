@@ -18,12 +18,12 @@ const questions = [
   },
   {
     type: "input",
-    name: "installinst",
+    name: "installation",
     message: "What are some instructions for installing the application?",
   },
   {
     type: "input",
-    name: "usageinf",
+    name: "usage",
     message: "How to use this application?",
   },
   {
@@ -41,7 +41,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What licensing did you use",
-    choices: ["MIT", "NONE"],
+    choices: ["mit", "NONE"],
   },
   // github and email
   {
@@ -65,6 +65,7 @@ const questions = [
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
+    // for each index in questions console data[0] ++
     const test = generateMarkdown(answers);
     // creates readme inside of xtreme file
     fs.writeFile("./Xtreme_Readme/README.md", test, (err) =>
