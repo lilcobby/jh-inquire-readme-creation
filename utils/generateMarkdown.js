@@ -14,10 +14,10 @@ function generateMarkdown(data) {
 ## Heres the license link: (https://choosealicense.com/licenses/${data.license})
 
 ## Table of Contents:
-- [Description](#Description:)
-- [Installation](#Installation:)
-- [Usage](#Usage:)
-- [Test Instructions](#Test-Instructions:)
+- [Description](#description:)
+- [Installation](#installation:)
+- [Usage](#usage:)
+- [Test Instructions](#test-Instructions:)
 
 
 ## Description: ${data.description}
