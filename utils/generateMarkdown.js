@@ -1,40 +1,59 @@
 // TODO: Create a function to generate markdown for README
+
+function none(data) {
+  if (data.license === "NONE") {
+    console.log("You have selected no license, but...");
+    return "";
+  } else {
+    return `## Badge: 
+
+    ![License: ${data.license}](https://img.shields.io/badge/${data.license}-yellow.svg) 
+
+    ## Heres the license link: (https://choosealicense.com/licenses/${data.license})`;
+  }
+}
+
 function generateMarkdown(data) {
   return `# Title: ${data.title}
 
 
+${none(data)}
 
 
-## Badge: 
-
-![License: ${data.license}](https://img.shields.io/badge/${data.license}-yellow.svg)
-
-
-
-## Heres the license link: (https://choosealicense.com/licenses/${data.license})
-
-## Table of Contents:
-- [Description](#description:)
-- [Installation](#installation:)
-- [Usage](#usage:)
-- [Test Instructions](#test-Instructions:)
+# Table of Contents:
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Test Instructions](#test-instructions)
+- [Github](#github)
+- [Email](#email)
 
 
-## Description: ${data.description}
+## Description 
+${data.description}
 
-## Installation: ${data.installation}
+## Installation 
+${data.installation}
 
-## Usage: ${data.usage}
+## Usage 
+${data.usage}
 
-## Contributions: ${data.contributions}
+## Contributions 
+${data.contributions}
 
-## Test-Instructions: ${data.testins}
+## Test-Instructions 
+${data.testins}
 
-## Licensing: ${data.license}
+## Licensing 
+${data.license}
 
-## Github: https://github.com/${data.username}
+## Github 
+https://github.com/${data.username}
 
-## Email: ${data.email}`;
+## Email 
+${data.email}`;
+
+  // this where an image goes
 }
 
 module.exports = generateMarkdown;

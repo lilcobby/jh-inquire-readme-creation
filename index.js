@@ -41,7 +41,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What licensing did you use",
-    choices: ["mit", "NONE"],
+    choices: ["mit", "unlicense", "apache-2.0", "NONE"],
   },
   // github and email
   {
@@ -56,23 +56,69 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
-
-// function writeToFile(fileName, data) {
-//   fs.writeFile();
-// }
-
-// TODO: Create a function to initialize app
-function init() {
+// creates prompts functions
+function prompts() {
   inquirer.prompt(questions).then((answers) => {
-    // for each index in questions console data[0] ++
+    // Creates folder, creates readme file
+    fs.mkdirSync("./Xtreme_Readme");
     const test = generateMarkdown(answers);
-    // creates readme inside of xtreme file
+    // Creates readme inside of xtreme file
     fs.writeFile("./Xtreme_Readme/README.md", test, (err) =>
-      err ? console.log(err) : console.log("Successfully created readme")
+      err
+        ? console.log(err)
+        : console.log("You have successfully created readme")
     );
   });
 }
 
-// Function call to initialize app
+// TODO: Create a function to initialize app
+// ai assist:
+function init() {
+  // Removes existing readme file and folder if you have run the program multiple times
+  const remove = fs.existsSync("./Xtreme_Readme");
+  if (remove) {
+    console.log(`${"Xtreme_Readme"} is being deleted...`);
+    fs.rm("Xtreme_Readme", { recursive: true, force: true }, (err) => {
+      if (err) {
+        throw err;
+      }
+      console.log(`${"Xtreme_Readme"} is deleted`);
+
+      // Continue with the inquirer.prompt here
+      prompts();
+    });
+  } else {
+    // Continue with the inquirer.prompt here
+    prompts();
+  }
+}
 init();
+// my stuff:
+// // Function call to initialize app
+// init();
+// function init() {
+//   // removes existing readme file and folder if you have run the program multiple times
+//   const remove = fs.existsSync("./Xtreme_Readme");
+//   if (remove) {
+//     fs.rm("Xtreme_Readme", { recursive: true, force: true }, (err) => {
+//       if (err) {
+//         throw err;
+//       }
+//       return console.log("Xtreme_readme is deleted");
+//     });
+//   }
+
+//   inquirer.prompt(questions).then((answers) => {
+//     // for each index in questions console data[0] ++?
+//     // creates folder, creates readme file
+//     fs.mkdirSync("./Xtreme_Readme");
+//     const test = generateMarkdown(answers);
+//     // creates readme inside of xtreme file
+//     fs.writeFile("./Xtreme_Readme/README.md", test, (err) =>
+//       err
+//         ? console.log(err)
+//         : console.log("You have successfully created readme")
+//     );
+//   });
+// }
+// // Function call to initialize app
