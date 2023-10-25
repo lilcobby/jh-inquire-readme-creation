@@ -42,4 +42,5 @@ jshairfield13@gmail.com
 
 Additionally: You will have to add screenshots, images, videos, etc manually to the created readme.md files.
 
-video to come tomorrow:
+video of functionality
+[vid](/assets/readme_test.gif)

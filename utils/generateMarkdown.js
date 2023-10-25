@@ -14,7 +14,6 @@ function noneUrl(data) {
   }
 }
 
-
 // replace method used to convert -- to -. useful for making the badge link and documentation link function properly.
 function none(data) {
   if (data.license === "NONE") {
