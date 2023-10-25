@@ -1,3 +1,4 @@
+// future work: create a function to dynamically place images into a folder and append them to the readme file that you have generated.
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -55,7 +56,7 @@ const questions = [
     message: "What is your email?",
   },
 ];
-// future work: create a function to dynamically place images into a folder and append them to the readme file that you have generated.
+
 // creates prompts functions
 function prompts() {
   inquirer.prompt(questions).then((answers) => {

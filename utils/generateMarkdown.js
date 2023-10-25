@@ -1,5 +1,19 @@
-// TODO: Create a function to generate markdown for README
 // future work, add checks if input !=  " ", append section. else don't
+// TODO: Create a function to generate markdown for README
+
+// function to create the license url and section...had to
+function noneUrl(data) {
+  if (data.license === "NONE") {
+    return "No License Provided";
+  } else {
+    return `## License: 
+   License link: (https://choosealicense.com/licenses/${data.license.replace(
+     "--",
+     "-"
+   )})`;
+  }
+}
+
 
 // replace method used to convert -- to -. useful for making the badge link and documentation link function properly.
 function none(data) {
@@ -9,14 +23,7 @@ function none(data) {
   } else {
     return `## Badge: 
 
-  ![License: ${data.license}](https://img.shields.io/badge/${
-      data.license
-    }-red.svg) 
-
-  ## And here is the license link: (https://choosealicense.com/licenses/${data.license.replace(
-    "--",
-    "-"
-  )})`;
+  ![License: ${data.license}](https://img.shields.io/badge/${data.license}-red.svg) `;
   }
 }
 
@@ -31,9 +38,11 @@ ${none(data)}
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Test Instructions](#test-instructions)
-- [Github](#github)
-- [Email](#email)
+- [Contributions](#contributions)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
+
 
 
 ## Description 
@@ -48,16 +57,18 @@ ${data.usage}
 ## Contributions 
 ${data.contributions}
 
-## Test-Instructions 
+## Tests
 ${data.testins}
 
 ## Licensing 
-${data.license}
+${noneUrl(data)}
 
-## Github 
+
+## Questions
+
 https://github.com/${data.username}
 
-## Email 
+
 ${data.email}`;
 
   // this where an image goes
