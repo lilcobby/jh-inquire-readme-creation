@@ -41,7 +41,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What licensing did you use",
-    choices: ["mit", "unlicense", "apache-2.0", "NONE"],
+    choices: ["mit", "unlicense", "apache--2.0", "NONE"],
   },
   // github and email
   {
@@ -55,7 +55,7 @@ const questions = [
     message: "What is your email?",
   },
 ];
-
+// future work: create a function to dynamically place images into a folder and append them to the readme file that you have generated.
 // creates prompts functions
 function prompts() {
   inquirer.prompt(questions).then((answers) => {
